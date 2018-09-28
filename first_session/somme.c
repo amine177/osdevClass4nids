@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
   int s;
 
   if (argc < 2) {
-    printf("Usage: ./somme.c a b");
+    printf("Usage: ./somme.c a b [.....]");
     exit(1);
   }
 
