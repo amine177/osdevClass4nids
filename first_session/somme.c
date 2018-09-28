@@ -5,12 +5,14 @@ int main(int argc, char *argv[])
 {
   int s;
 
-  if (argc != 3) {
+  if (argc < 2) {
     printf("Usage: ./somme.c a b");
     exit(1);
   }
 
-  s = atoi(*++argv) + atoi(*++argv);
+  s = 0;
+  while (--argc)
+    s += atoi(*++argv);
 
   printf("s = %d\n", s);
 
