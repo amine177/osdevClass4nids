@@ -15,4 +15,6 @@ int main()
     printf("Done in child\n");
   } else {
   }
+
+  printf("Je suis dan le parent!\n");
 }
