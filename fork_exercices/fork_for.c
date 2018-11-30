@@ -6,8 +6,10 @@
 int main()
 {
   int i;
-  for (i = 0; i < 3; i++)
-    fork();
+  for (i = 0; i < 4; i++) {
+    if (fork()>0)
+      fork();
+  }
 
   printf("A\n");
 }

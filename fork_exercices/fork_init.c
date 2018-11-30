@@ -5,21 +5,22 @@
 
 int main()
 {
-  int i;
-  pid_t cpid;
+  int retour_fork;
 
-  i = 0;
-  if((cpid = fork()) > 0) {
-    printf("%x\n", &i);
-    printf("I am in the parent my PID is :%d, my child have PID: %d\n", getpid(), cpid);
-    i += 1;
-    sleep(20);
+  retour_fork = fork();
+
+  if (retour_fork > 1) {
+    printf("Je suis père de : %d et mon pid est: %d\n", retour_fork, getpid());
+  } else if (retour_fork == 0) {
+    printf("Je suis fils de %d mon PID est : %d\n", getppid(), getpid());
+  } else {
+    printf("erreur fork!\n");
   }
-  else {
-    sleep(10);
-    printf("I am a child of: %d\n", getppid());
-    printf("i: %d\n", i);
+
+  if (retour_fork == 0) {
+    fork();
   }
+
 
   return 0;
 }
