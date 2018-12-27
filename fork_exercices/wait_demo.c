@@ -20,6 +20,5 @@ int main()
     exit(2);
   }
   if (n > 0) {
-    printf("mon fils %d, exited aved code: %d\n", fils2, p2);
+    printf("mon fils %d, exited aved code: %d\n", fils3, p2);
   }
-}
